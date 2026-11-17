@@ -98,13 +98,40 @@ jobs:
         (cd cinderx && ../build/runtime-tests/RuntimeTests)
 
   build_wheels:
-    name: Build wheels on ${{ matrix.os }}
+    name: Build wheels on ${{ matrix.os }} (${{ matrix.build }})
     runs-on: ${{ matrix.os }}
     strategy:
       # Don't let build failures on one platform block other platforms.
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, ubuntu-26.04-arm, macos-latest, windows-latest]
+        # One job per Linux wheel instead of five wheels one after another in a
+        # single job: each wheel is an independent PGO/LTO build, so the wall
+        # clock drops from the sum of the five to the slowest one.
+        include:
+          - os: ubuntu-latest
+            build: cp314-manylinux_x86_64
+          - os: ubuntu-latest
+            build: cp314t-manylinux_x86_64
+          - os: ubuntu-latest
+            build: cp315-manylinux_x86_64
+          - os: ubuntu-latest
+            build: cp314-musllinux_x86_64
+          - os: ubuntu-latest
+            build: cp315-musllinux_x86_64
+          - os: ubuntu-26.04-arm
+            build: cp314-manylinux_aarch64
+          - os: ubuntu-26.04-arm
+            build: cp314t-manylinux_aarch64
+          - os: ubuntu-26.04-arm
+            build: cp315-manylinux_aarch64
+          - os: ubuntu-26.04-arm
+            build: cp314-musllinux_aarch64
+          - os: ubuntu-26.04-arm
+            build: cp315-musllinux_aarch64
+          - os: macos-latest
+            build: cp314-macosx_arm64 cp315-macosx_arm64
+          - os: windows-latest
+            build: cp314-win_amd64
 
     steps:
       - name: Checkout CinderX
@@ -120,6 +147,8 @@ jobs:
 
       - name: Build wheels
         run: python -m cibuildwheel --output-dir wheelhouse
+        env:
+          CIBW_BUILD: ${{ matrix.build }}
 
   build_sdist:
     name: Build source distribution
