@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "upstream": {
+    "repository": "facebookincubator/cinderx",
+    "commitSha": "876787b2c0d0073793c41dcb61c547418f7401f5",
+    "defaultBranch": "main"
+  },
+  "benchmarkRepository": {
+    "repository": "starsling-demo-org/benchmark-cinderx",
+    "controlBranch": "bench/control",
+    "defaultBranch": "showcase",
+    "replayBranch": "main"
+  },
+  "scenarios": {
+    "main-push": {
+      "name": "main-push",
+      "description": "Merge of 876787b2c0d0 to main",
+      "event": "push",
+      "main": {
+        "branch": "main",
+        "beforeSha": "57b8fffb71980e7e39d666bbba0bddae6d828a4a",
+        "afterSha": "876787b2c0d0073793c41dcb61c547418f7401f5",
+        "changedPaths": [
+          "cinderx/Interpreter/3.15/interpreter.c",
+          "cinderx/Interpreter/3.16/interpreter.c"
+        ]
+      },
+      "referenceRuns": [
+        {
+          "workflowPath": ".github/workflows/ci.yml",
+          "runId": 42680035718,
+          "attempt": 1,
+          "htmlUrl": "https://github.com/facebookincubator/cinderx/actions/runs/42680035718"
+        }
+      ]
+    },
+    "seed-parent": {
+      "name": "seed-parent",
+      "role": "seed",
+      "description": "Warm seed: the previous push (57b8fffb7198 onto f77837ad81c9)",
+      "event": "push",
+      "main": {
+        "branch": "main",
+        "beforeSha": "f77837ad81c97fa64b5abc60908e7f6a12dd8bc6",
+        "afterSha": "57b8fffb71980e7e39d666bbba0bddae6d828a4a",
+        "changedPaths": [
+          "cinderx/PythonLib/test_cinderx/test_jit_exception.py"
+        ]
+      },
+      "referenceRuns": []
+    }
+  },
+  "patches": [
+    {
+      "id": "stack-0",
+      "source": "local",
+      "pathOrUrl": "patches/stack-0.patch",
+      "description": "levers stacked in order: 01-split-build-wheels-per-wheel"
+    }
+  ],
+  "runnerMapping": {
+    "defaultMap": {
+      "ubuntu-latest": {
+        "github": "ubuntu-24.04-4core",
+        "starsling": "starsling-ubuntu-24.04"
+      },
+      "ubuntu-24.04": {
+        "starsling": "starsling-ubuntu-24.04"
+      },
+      "ubuntu-26.04": {
+        "starsling": "starsling-ubuntu-26.04"
+      },
+      "ubuntu-slim": {
+        "starsling": "starsling-ubuntu-24.04-2"
+      },
+      "ubuntu-26.04-arm": {
+        "github": "ubuntu-26.04-arm-4core",
+        "starsling": "ubuntu-26.04-arm-4core"
+      },
+      "macos-latest": {
+        "github": "macos-26",
+        "starsling": "macos-26"
+      },
+      "windows-latest": {
+        "github": "windows-2025-4core",
+        "starsling": "windows-2025-4core"
+      }
+    },
+    "runnerSpecs": {
+      "ubuntu-latest": {
+        "label": "ubuntu-latest",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "ubuntu-24.04": {
+        "label": "ubuntu-24.04",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "ubuntu-26.04": {
+        "label": "ubuntu-26.04",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "ubuntu-slim": {
+        "label": "ubuntu-slim",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 1,
+        "ramGiB": 5
+      },
+      "starsling-ubuntu-24.04-2": {
+        "label": "starsling-ubuntu-24.04-2",
+        "provider": "starsling",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 2,
+        "ramGiB": 8
+      },
+      "starsling-ubuntu-24.04": {
+        "label": "starsling-ubuntu-24.04",
+        "provider": "starsling",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "starsling-ubuntu-26.04": {
+        "label": "starsling-ubuntu-26.04",
+        "provider": "starsling",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "macos-latest": {
+        "label": "macos-latest",
+        "provider": "github",
+        "os": "macos",
+        "arch": "arm64",
+        "vcpu": 3,
+        "ramGiB": 7
+      },
+      "windows-latest": {
+        "label": "windows-latest",
+        "provider": "github",
+        "os": "windows",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "ubuntu-24.04-4core": {
+        "label": "ubuntu-24.04-4core",
+        "provider": "github",
+        "os": "linux",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "ubuntu-26.04-arm-4core": {
+        "label": "ubuntu-26.04-arm-4core",
+        "provider": "github",
+        "os": "linux",
+        "arch": "arm64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "macos-26": {
+        "label": "macos-26",
+        "provider": "github",
+        "os": "macos",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      },
+      "windows-2025-4core": {
+        "label": "windows-2025-4core",
+        "provider": "github",
+        "os": "windows",
+        "arch": "x64",
+        "vcpu": 4,
+        "ramGiB": 16
+      }
+    }
+  },
+  "profiles": {
+    "cold": {
+      "name": "cold",
+      "actionsCache": "cold",
+      "crossRunArtifacts": "none",
+      "restoreExpectations": {},
+      "testResultReuseAllowed": false
+    },
+    "warm": {
+      "name": "warm",
+      "actionsCache": "warm",
+      "crossRunArtifacts": "seeded",
+      "seedScenario": "seed-parent",
+      "restoreExpectations": {},
+      "testResultReuseAllowed": true,
+      "amortizationHorizonRuns": 10
+    }
+  },
+  "adaptations": [],
+  "collectors": [],
+  "execution": {
+    "repetitions": 5,
+    "timeoutMinutes": 120,
+    "maxConcurrentExperiments": 1,
+    "pollIntervalSeconds": 15,
+    "apiBudgetPerHour": 252,
+    "maxJobQueueSeconds": 30,
+    "publicRepoGitHubFree": true,
+    "commitIdentity": {
+      "name": "starsling-dev",
+      "email": "290538643+starsling-dev@users.noreply.github.com"
+    }
+  },
+  "instrumentation": true
+}
