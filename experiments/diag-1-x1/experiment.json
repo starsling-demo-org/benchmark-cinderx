@@ -1,0 +1,2194 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "schemaVersion": 1,
+    "experimentId": "diag-1-x1",
+    "inputFingerprint": "e552034ae071cc6af1606d7b6198f961c3a68bd14a66e4cdb26fe236549e3a3a",
+    "samples": [
+      {
+        "sampleId": "diag-1-x1-main-push-cold-rep1-starsling-baseline",
+        "scenarioName": "main-push",
+        "profileName": "cold",
+        "variant": "starsling-baseline",
+        "repetition": 1
+      }
+    ]
+  },
+  "config": {
+    "schemaVersion": 1,
+    "upstream": {
+      "repository": "facebookincubator/cinderx",
+      "commitSha": "876787b2c0d0073793c41dcb61c547418f7401f5",
+      "defaultBranch": "main"
+    },
+    "benchmarkRepository": {
+      "repository": "starsling-demo-org/benchmark-cinderx",
+      "controlBranch": "bench/control",
+      "defaultBranch": "showcase",
+      "replayBranch": "main"
+    },
+    "scenarios": {
+      "main-push": {
+        "name": "main-push",
+        "description": "Merge of 876787b2c0d0 to main",
+        "event": "push",
+        "main": {
+          "branch": "main",
+          "beforeSha": "57b8fffb71980e7e39d666bbba0bddae6d828a4a",
+          "afterSha": "876787b2c0d0073793c41dcb61c547418f7401f5",
+          "changedPaths": [
+            "cinderx/Interpreter/3.15/interpreter.c",
+            "cinderx/Interpreter/3.16/interpreter.c"
+          ]
+        },
+        "referenceRuns": [
+          {
+            "workflowPath": ".github/workflows/ci.yml",
+            "runId": 42680035718,
+            "attempt": 1,
+            "htmlUrl": "https://github.com/facebookincubator/cinderx/actions/runs/42680035718"
+          }
+        ]
+      },
+      "seed-parent": {
+        "name": "seed-parent",
+        "role": "seed",
+        "description": "Warm seed: the previous push (57b8fffb7198 onto f77837ad81c9)",
+        "event": "push",
+        "main": {
+          "branch": "main",
+          "beforeSha": "f77837ad81c97fa64b5abc60908e7f6a12dd8bc6",
+          "afterSha": "57b8fffb71980e7e39d666bbba0bddae6d828a4a",
+          "changedPaths": [
+            "cinderx/PythonLib/test_cinderx/test_jit_exception.py"
+          ]
+        },
+        "referenceRuns": []
+      }
+    },
+    "patches": [],
+    "runnerMapping": {
+      "defaultMap": {
+        "ubuntu-latest": {
+          "github": "ubuntu-24.04-4core",
+          "starsling": "starsling-ubuntu-24.04"
+        },
+        "ubuntu-24.04": {
+          "github": "TODO-github-larger-runner-for-ubuntu-24.04",
+          "starsling": "starsling-ubuntu-24.04"
+        },
+        "ubuntu-26.04": {
+          "github": "TODO-github-larger-runner-for-ubuntu-26.04",
+          "starsling": "starsling-ubuntu-26.04"
+        },
+        "ubuntu-slim": {
+          "github": "TODO-github-larger-runner-for-ubuntu-slim",
+          "starsling": "starsling-ubuntu-24.04-2"
+        },
+        "ubuntu-26.04-arm": {
+          "github": "ubuntu-26.04-arm-4core",
+          "starsling": "ubuntu-26.04-arm-4core"
+        },
+        "macos-latest": {
+          "github": "macos-26",
+          "starsling": "macos-26"
+        },
+        "windows-latest": {
+          "github": "windows-2025-4core",
+          "starsling": "windows-2025-4core"
+        }
+      },
+      "runnerSpecs": {
+        "ubuntu-latest": {
+          "label": "ubuntu-latest",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "ubuntu-24.04": {
+          "label": "ubuntu-24.04",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "ubuntu-26.04": {
+          "label": "ubuntu-26.04",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "ubuntu-slim": {
+          "label": "ubuntu-slim",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 1,
+          "ramGiB": 5,
+          "billingPerMinuteUsd": 0.004
+        },
+        "starsling-ubuntu-24.04-2": {
+          "label": "starsling-ubuntu-24.04-2",
+          "provider": "starsling",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 2,
+          "ramGiB": 8,
+          "billingPerMinuteUsd": 0.004
+        },
+        "starsling-ubuntu-24.04": {
+          "label": "starsling-ubuntu-24.04",
+          "provider": "starsling",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.008
+        },
+        "starsling-ubuntu-26.04": {
+          "label": "starsling-ubuntu-26.04",
+          "provider": "starsling",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.008
+        },
+        "macos-latest": {
+          "label": "macos-latest",
+          "provider": "github",
+          "os": "macos",
+          "arch": "arm64",
+          "vcpu": 3,
+          "ramGiB": 7,
+          "billingPerMinuteUsd": 0.08
+        },
+        "windows-latest": {
+          "label": "windows-latest",
+          "provider": "github",
+          "os": "windows",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.032
+        },
+        "TODO-github-larger-runner-for-ubuntu-latest": {
+          "label": "TODO-github-larger-runner-for-ubuntu-latest",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "TODO-github-larger-runner-for-ubuntu-24.04": {
+          "label": "TODO-github-larger-runner-for-ubuntu-24.04",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "TODO-github-larger-runner-for-ubuntu-26.04": {
+          "label": "TODO-github-larger-runner-for-ubuntu-26.04",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "TODO-github-larger-runner-for-ubuntu-slim": {
+          "label": "TODO-github-larger-runner-for-ubuntu-slim",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 1,
+          "ramGiB": 5,
+          "billingPerMinuteUsd": 0.004
+        },
+        "ubuntu-24.04-4core": {
+          "label": "ubuntu-24.04-4core",
+          "provider": "github",
+          "os": "linux",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "ubuntu-26.04-arm-4core": {
+          "label": "ubuntu-26.04-arm-4core",
+          "provider": "github",
+          "os": "linux",
+          "arch": "arm64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "macos-26": {
+          "label": "macos-26",
+          "provider": "github",
+          "os": "macos",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        },
+        "windows-2025-4core": {
+          "label": "windows-2025-4core",
+          "provider": "github",
+          "os": "windows",
+          "arch": "x64",
+          "vcpu": 4,
+          "ramGiB": 16,
+          "billingPerMinuteUsd": 0.016
+        }
+      }
+    },
+    "profiles": {
+      "cold": {
+        "name": "cold",
+        "actionsCache": "cold",
+        "crossRunArtifacts": "none",
+        "restoreExpectations": {},
+        "testResultReuseAllowed": false
+      },
+      "warm": {
+        "name": "warm",
+        "actionsCache": "warm",
+        "crossRunArtifacts": "seeded",
+        "seedScenario": "seed-parent",
+        "restoreExpectations": {},
+        "testResultReuseAllowed": true,
+        "amortizationHorizonRuns": 10
+      }
+    },
+    "adaptations": [],
+    "collectors": [],
+    "execution": {
+      "repetitions": 5,
+      "timeoutMinutes": 120,
+      "maxConcurrentExperiments": 1,
+      "pollIntervalSeconds": 15,
+      "apiBudgetPerHour": 252,
+      "maxJobQueueSeconds": 30,
+      "publicRepoGitHubFree": true,
+      "commitIdentity": {
+        "name": "starsling-dev",
+        "email": "290538643+starsling-dev@users.noreply.github.com"
+      }
+    },
+    "instrumentation": true
+  },
+  "samples": [
+    {
+      "sampleId": "diag-1-x1-main-push-cold-rep1-starsling-baseline",
+      "repetition": 1,
+      "scenarioName": "main-push",
+      "variant": "starsling-baseline",
+      "profileName": "cold",
+      "complete": true,
+      "incompleteReasons": [],
+      "missingWorkflows": [],
+      "missingJobs": [],
+      "cancelledJobs": [],
+      "failedJobs": [],
+      "partialTimestampJobs": [],
+      "timestampResolution": "1s",
+      "metrics": {
+        "repoMinutes": 206.7667,
+        "rawRunnerSeconds": 12406,
+        "wallClockSeconds": 4050,
+        "prWallClockSeconds": null,
+        "mainWallClockSeconds": 4050,
+        "triggerLatencySeconds": 5,
+        "harnessOverheadSeconds": 1,
+        "maxJobQueueSeconds": 9,
+        "maxJobQueueLabel": "starsling-ubuntu-24.04"
+      },
+      "workflows": [
+        {
+          "runId": 43846373291,
+          "runAttempt": 1,
+          "priorAttemptsCount": 0,
+          "workflowPath": ".github/workflows/ci.yml",
+          "workflowName": "CI",
+          "event": "push",
+          "conclusion": "success",
+          "durationSeconds": 4050,
+          "startedAt": "2026-11-16T10:10:06Z",
+          "completedAt": "2026-11-16T11:17:36Z",
+          "htmlUrl": "https://github.com/starsling-demo-org/benchmark-cinderx/actions/runs/43846373291",
+          "jobs": [
+            {
+              "jobRecordId": 133227451003,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Build source distribution",
+              "logicalJobId": "build_sdist",
+              "conclusion": "success",
+              "durationSeconds": 6,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 8,
+              "resolution": "1s",
+              "labels": [
+                "starsling-ubuntu-24.04"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Set up runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 3,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 4,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Install build tools",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Build sdist",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 14,
+                  "name": "Complete runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 15,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451343,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Build wheels on macos-latest",
+              "logicalJobId": "build_wheels",
+              "conclusion": "success",
+              "durationSeconds": 666,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 3,
+              "resolution": "1s",
+              "labels": [
+                "macos-26"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 3,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 4,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Install cibuildwheel",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Build wheels",
+                  "conclusion": "success",
+                  "durationSeconds": 658,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451440,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Run Tests (macos-26, 3.15)",
+              "logicalJobId": "run_tests",
+              "conclusion": "success",
+              "durationSeconds": 380,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 3,
+              "resolution": "1s",
+              "labels": [
+                "macos-26"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 3,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 4,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 30,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Install GCC 14",
+                  "conclusion": "skipped",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Create venv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 8,
+                  "name": "Build CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 111,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 9,
+                  "name": "Install CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 10,
+                  "name": "Check CinderX loads successfully",
+                  "conclusion": "success",
+                  "durationSeconds": 63,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Install pytest",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Run Tests",
+                  "conclusion": "success",
+                  "durationSeconds": 151,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Run native tests",
+                  "conclusion": "success",
+                  "durationSeconds": 16,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 24,
+                  "name": "Post Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 25,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 26,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 27,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451469,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Run Tests (ubuntu-26.04-arm-4core, 3.14)",
+              "logicalJobId": "run_tests",
+              "conclusion": "success",
+              "durationSeconds": 849,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 5,
+              "resolution": "1s",
+              "labels": [
+                "ubuntu-26.04-arm-4core"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 3,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 4,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Install GCC 14",
+                  "conclusion": "success",
+                  "durationSeconds": 4,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Create venv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 8,
+                  "name": "Build CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 382,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 9,
+                  "name": "Install CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 10,
+                  "name": "Check CinderX loads successfully",
+                  "conclusion": "success",
+                  "durationSeconds": 197,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Install pytest",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Run Tests",
+                  "conclusion": "success",
+                  "durationSeconds": 229,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Run native tests",
+                  "conclusion": "success",
+                  "durationSeconds": 29,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 24,
+                  "name": "Post Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 25,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 26,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 27,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451515,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Run Tests (starsling-ubuntu-24.04, 3.14)",
+              "logicalJobId": "run_tests",
+              "conclusion": "success",
+              "durationSeconds": 483,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 8,
+              "resolution": "1s",
+              "labels": [
+                "starsling-ubuntu-24.04"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Set up runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 3,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 4,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Install GCC 14",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 8,
+                  "name": "Create venv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 9,
+                  "name": "Build CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 183,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 10,
+                  "name": "Install CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Check CinderX loads successfully",
+                  "conclusion": "success",
+                  "durationSeconds": 100,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Install pytest",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Run Tests",
+                  "conclusion": "success",
+                  "durationSeconds": 178,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 14,
+                  "name": "Run native tests",
+                  "conclusion": "success",
+                  "durationSeconds": 16,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 25,
+                  "name": "Post Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 26,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 27,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 28,
+                  "name": "Complete runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 29,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451518,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Build wheels on ubuntu-latest",
+              "logicalJobId": "build_wheels",
+              "conclusion": "success",
+              "durationSeconds": 2528,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 8,
+              "resolution": "1s",
+              "labels": [
+                "starsling-ubuntu-24.04"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Set up runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 3,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 4,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Install cibuildwheel",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Build wheels",
+                  "conclusion": "success",
+                  "durationSeconds": 2523,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 14,
+                  "name": "Complete runner",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 15,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451565,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Run Tests (macos-26, 3.14)",
+              "logicalJobId": "run_tests",
+              "conclusion": "success",
+              "durationSeconds": 331,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 3,
+              "resolution": "1s",
+              "labels": [
+                "macos-26"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 3,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 4,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Install GCC 14",
+                  "conclusion": "skipped",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Create venv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 8,
+                  "name": "Build CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 112,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 9,
+                  "name": "Install CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 10,
+                  "name": "Check CinderX loads successfully",
+                  "conclusion": "success",
+                  "durationSeconds": 58,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Install pytest",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Run Tests",
+                  "conclusion": "success",
+                  "durationSeconds": 134,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Run native tests",
+                  "conclusion": "success",
+                  "durationSeconds": 16,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 24,
+                  "name": "Post Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 25,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 26,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 27,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451602,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Build wheels on ubuntu-26.04-arm",
+              "logicalJobId": "build_wheels",
+              "conclusion": "success",
+              "durationSeconds": 4044,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 6,
+              "resolution": "1s",
+              "labels": [
+                "ubuntu-26.04-arm-4core"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 3,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 4,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Install cibuildwheel",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Build wheels",
+                  "conclusion": "success",
+                  "durationSeconds": 4036,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451626,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Run Tests (starsling-ubuntu-24.04, 3.14t)",
+              "logicalJobId": "run_tests",
+              "conclusion": "success",
+              "durationSeconds": 215,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 8,
+              "resolution": "1s",
+              "labels": [
+                "starsling-ubuntu-24.04"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Set up runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 3,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 4,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 6,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Install GCC 14",
+                  "conclusion": "success",
+                  "durationSeconds": 3,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 8,
+                  "name": "Create venv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 9,
+                  "name": "Build CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 101,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 10,
+                  "name": "Install CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Check CinderX loads successfully",
+                  "conclusion": "success",
+                  "durationSeconds": 99,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Install pytest",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Run Tests",
+                  "conclusion": "skipped",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 14,
+                  "name": "Run native tests",
+                  "conclusion": "skipped",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 25,
+                  "name": "Post Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 26,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 27,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 28,
+                  "name": "Complete runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 29,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451645,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Run Tests (windows-2025-4core, 3.14)",
+              "logicalJobId": "run_tests",
+              "conclusion": "success",
+              "durationSeconds": 833,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 3,
+              "resolution": "1s",
+              "labels": [
+                "windows-2025-4core"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 3,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 7,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 4,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 3,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Install GCC 14",
+                  "conclusion": "skipped",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Create venv",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 8,
+                  "name": "Build CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 301,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 9,
+                  "name": "Install CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 10,
+                  "name": "Check CinderX loads successfully",
+                  "conclusion": "success",
+                  "durationSeconds": 273,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Install pytest",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Run Tests",
+                  "conclusion": "success",
+                  "durationSeconds": 238,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Run native tests",
+                  "conclusion": "skipped",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 24,
+                  "name": "Post Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 25,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 26,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 3,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 27,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451696,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Build wheels on windows-latest",
+              "logicalJobId": "build_wheels",
+              "conclusion": "success",
+              "durationSeconds": 627,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 4,
+              "resolution": "1s",
+              "labels": [
+                "windows-2025-4core"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 3,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 7,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 4,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Install cibuildwheel",
+                  "conclusion": "success",
+                  "durationSeconds": 8,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Build wheels",
+                  "conclusion": "success",
+                  "durationSeconds": 604,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 3,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451756,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Run Tests (starsling-ubuntu-24.04, 3.15)",
+              "logicalJobId": "run_tests",
+              "conclusion": "success",
+              "durationSeconds": 555,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 9,
+              "resolution": "1s",
+              "labels": [
+                "starsling-ubuntu-24.04"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Set up runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 3,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 4,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 5,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Install GCC 14",
+                  "conclusion": "success",
+                  "durationSeconds": 2,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 8,
+                  "name": "Create venv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 9,
+                  "name": "Build CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 191,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 10,
+                  "name": "Install CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Check CinderX loads successfully",
+                  "conclusion": "success",
+                  "durationSeconds": 105,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Install pytest",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Run Tests",
+                  "conclusion": "success",
+                  "durationSeconds": 228,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 14,
+                  "name": "Run native tests",
+                  "conclusion": "success",
+                  "durationSeconds": 16,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 25,
+                  "name": "Post Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 26,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 27,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 28,
+                  "name": "Complete runner",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 29,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            },
+            {
+              "jobRecordId": 133227451761,
+              "runId": 43846373291,
+              "runAttempt": 1,
+              "workflowPath": ".github/workflows/ci.yml",
+              "jobName": "Run Tests (ubuntu-26.04-arm-4core, 3.15)",
+              "logicalJobId": "run_tests",
+              "conclusion": "success",
+              "durationSeconds": 889,
+              "dependencyWaitSeconds": 0,
+              "runnerQueueSeconds": 6,
+              "resolution": "1s",
+              "labels": [
+                "ubuntu-26.04-arm-4core"
+              ],
+              "steps": [
+                {
+                  "number": 1,
+                  "name": "Set up job",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 2,
+                  "name": "Benchmark event context (harness)",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": true
+                },
+                {
+                  "number": 3,
+                  "name": "Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 4,
+                  "name": "Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 5,
+                  "name": "Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 3,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 6,
+                  "name": "Install GCC 14",
+                  "conclusion": "success",
+                  "durationSeconds": 4,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 7,
+                  "name": "Create venv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 8,
+                  "name": "Build CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 387,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 9,
+                  "name": "Install CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 10,
+                  "name": "Check CinderX loads successfully",
+                  "conclusion": "success",
+                  "durationSeconds": 200,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 11,
+                  "name": "Install pytest",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 12,
+                  "name": "Run Tests",
+                  "conclusion": "success",
+                  "durationSeconds": 258,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 13,
+                  "name": "Run native tests",
+                  "conclusion": "success",
+                  "durationSeconds": 30,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 24,
+                  "name": "Post Set up uv",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 25,
+                  "name": "Post Set up Python",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 26,
+                  "name": "Post Checkout CinderX",
+                  "conclusion": "success",
+                  "durationSeconds": 1,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                },
+                {
+                  "number": 27,
+                  "name": "Complete job",
+                  "conclusion": "success",
+                  "durationSeconds": 0,
+                  "resolution": "1s",
+                  "isHarnessInstrumentation": false
+                }
+              ]
+            }
+          ],
+          "artifacts": []
+        }
+      ],
+      "artifacts": [],
+      "inputFingerprint": "e552034ae071cc6af1606d7b6198f961c3a68bd14a66e4cdb26fe236549e3a3a"
+    }
+  ],
+  "seedSamples": [],
+  "cacheSnapshots": {
+    "diag-1-x1-main-push-cold-rep1-starsling-baseline": [
+      {
+        "id": 10588573226,
+        "ref": "refs/heads/main",
+        "key": "setup-uv-2-aarch64-unknown-linux-gnu-ubuntu-26.04-3.15.2-pruned-f5d3b3a5cded41e76b062189df43886a451916317f2ba97032b943cc8be49980",
+        "version": "6db063dfc25f608b072de08a569df17044985f859de13b9c8c29ef77309b9509",
+        "last_accessed_at": "2026-11-16T09:04:33.051588Z",
+        "created_at": "2026-11-16T09:04:33.051588Z",
+        "size_in_bytes": 255181
+      },
+      {
+        "id": 10588563447,
+        "ref": "refs/heads/main",
+        "key": "setup-uv-2-x86_64-pc-windows-msvc-windows-2025-3.14.10-pruned-24d367c58266091ab93a1b5b6272c9d3e64a3e0ab887c886d4f151123c1612cf",
+        "version": "8620ee4afbf5707b5dc55e885d222ad5e7dcc432b946f8fdf9bf92e7ca5ed913",
+        "last_accessed_at": "2026-11-16T09:04:20.180095Z",
+        "created_at": "2026-11-16T09:04:20.180095Z",
+        "size_in_bytes": 265396
+      },
+      {
+        "id": 10588493626,
+        "ref": "refs/heads/main",
+        "key": "setup-uv-2-aarch64-unknown-linux-gnu-ubuntu-26.04-3.14.10-pruned-f5d3b3a5cded41e76b062189df43886a451916317f2ba97032b943cc8be49980",
+        "version": "6db063dfc25f608b072de08a569df17044985f859de13b9c8c29ef77309b9509",
+        "last_accessed_at": "2026-11-16T09:02:50.054551Z",
+        "created_at": "2026-11-16T09:02:50.054551Z",
+        "size_in_bytes": 255152
+      },
+      {
+        "id": 10588186673,
+        "ref": "refs/heads/main",
+        "key": "setup-uv-2-aarch64-apple-darwin-macos-16-3.14.10-pruned-f5d3b3a5cded41e76b062189df43886a451916317f2ba97032b943cc8be49980",
+        "version": "918460a9a4ec7d3b4bf031ffef03c97d60b35f7398f06b41409dc7803bc9da7b",
+        "last_accessed_at": "2026-11-16T08:56:06.239428Z",
+        "created_at": "2026-11-16T08:56:06.239428Z",
+        "size_in_bytes": 255674
+      },
+      {
+        "id": 10588156368,
+        "ref": "refs/heads/main",
+        "key": "setup-uv-2-aarch64-apple-darwin-macos-16-3.15.2-pruned-f5d3b3a5cded41e76b062189df43886a451916317f2ba97032b943cc8be49980",
+        "version": "918460a9a4ec7d3b4bf031ffef03c97d60b35f7398f06b41409dc7803bc9da7b",
+        "last_accessed_at": "2026-11-16T08:55:25.943898Z",
+        "created_at": "2026-11-16T08:55:25.943898Z",
+        "size_in_bytes": 255616
+      }
+    ]
+  },
+  "harnessHash": "5110d77af7981cf34f174e12b72f527bb03f8333c60f5259c3b0d336db7c38e9",
+  "apiUsage": {
+    "budgetPerHour": 252,
+    "experiment": {
+      "calls": 62,
+      "notModified": 159,
+      "graphql": 0,
+      "byCategory": {
+        "other-read": 1,
+        "run-list": 8,
+        "workflows": 9,
+        "caches": 2,
+        "cache-delete": 5,
+        "workflow-write": 5,
+        "jobs": 18,
+        "artifacts": 1,
+        "job-logs": 13
+      },
+      "throttledMs": 567152,
+      "rateLimitWaitMs": 0
+    },
+    "samples": {
+      "diag-1-x1-main-push-cold-rep1-starsling-baseline": {
+        "calls": 46,
+        "notModified": 152,
+        "graphql": 0,
+        "byCategory": {
+          "run-list": 3,
+          "workflows": 7,
+          "workflow-write": 4,
+          "jobs": 18,
+          "artifacts": 1,
+          "job-logs": 13
+        },
+        "throttledMs": 515009,
+        "rateLimitWaitMs": 0
+      }
+    }
+  },
+  "cacheResets": [
+    "diag-1-x1-main-push-cold-rep1-starsling-baseline"
+  ]
+}

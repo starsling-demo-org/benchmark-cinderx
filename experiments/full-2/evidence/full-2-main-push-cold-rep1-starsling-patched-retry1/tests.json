@@ -1,0 +1,359 @@
+{
+  "tests": [
+    {
+      "testId": "count:gtest:macos-26:3.14:total=1208,passed=1200",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:gtest:macos-26:3.15:total=1210,passed=1203",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:gtest:starsling-ubuntu-24.04:3.14:total=1240,passed=1234",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:gtest:starsling-ubuntu-24.04:3.15:total=1242,passed=1237",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:gtest:ubuntu-26.04-arm-4core:3.14:total=1249,passed=1242",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:gtest:ubuntu-26.04-arm-4core:3.15:total=1251,passed=1245",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:pytest:macos-26:3.14:passed=3045,skipped=565,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:pytest:macos-26:3.15:passed=3034,skipped=565,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:pytest:starsling-ubuntu-24.04:3.14:passed=3079,skipped=531,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:pytest:starsling-ubuntu-24.04:3.15:passed=3068,skipped=531,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:pytest:ubuntu-26.04-arm-4core:3.14:passed=3078,skipped=532,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:pytest:ubuntu-26.04-arm-4core:3.15:passed=3067,skipped=532,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:pytest:windows-2025-4core:3.14:passed=2983,skipped=627,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp314-macosx_arm64:passed=3045,skipped=565,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp314-manylinux_aarch64:passed=3078,skipped=532,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp314-manylinux_x86_64:passed=3079,skipped=531,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp314-musllinux_aarch64:passed=3075,skipped=535,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp314-musllinux_x86_64:passed=3076,skipped=534,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp314-win_amd64:passed=2982,skipped=578,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp315-macosx_arm64:passed=3034,skipped=565,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp315-manylinux_aarch64:passed=3067,skipped=532,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp315-manylinux_x86_64:passed=3068,skipped=531,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp315-musllinux_aarch64:passed=3064,skipped=535,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "count:wheel-pytest:cp315-musllinux_x86_64:passed=3065,skipped=534,failed=0",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "gtest:macos-26:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "gtest:macos-26:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "gtest:starsling-ubuntu-24.04:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "gtest:starsling-ubuntu-24.04:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "gtest:ubuntu-26.04-arm-4core:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "gtest:ubuntu-26.04-arm-4core:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "sdist",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "tests:macos-26:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "tests:macos-26:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "tests:starsling-ubuntu-24.04:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "tests:starsling-ubuntu-24.04:3.14t",
+      "verdict": "skipped",
+      "mode": "skipped"
+    },
+    {
+      "testId": "tests:starsling-ubuntu-24.04:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "tests:ubuntu-26.04-arm-4core:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "tests:ubuntu-26.04-arm-4core:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "tests:windows-2025-4core:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-build:macos-26:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-build:macos-26:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-build:starsling-ubuntu-24.04:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-build:starsling-ubuntu-24.04:3.14t",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-build:starsling-ubuntu-24.04:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-build:ubuntu-26.04-arm-4core:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-build:ubuntu-26.04-arm-4core:3.15",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-build:windows-2025-4core:3.14",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp314-macosx_arm64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp314-manylinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp314-manylinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp314-musllinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp314-musllinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp314-win_amd64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp315-macosx_arm64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp315-manylinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp315-manylinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp315-musllinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel-test:cp315-musllinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp314-macosx_arm64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp314-manylinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp314-manylinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp314-musllinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp314-musllinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp314-win_amd64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp314t-manylinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp314t-manylinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp315-macosx_arm64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp315-manylinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp315-manylinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp315-musllinux_aarch64",
+      "verdict": "passed",
+      "mode": "executed"
+    },
+    {
+      "testId": "wheel:cp315-musllinux_x86_64",
+      "verdict": "passed",
+      "mode": "executed"
+    }
+  ]
+}

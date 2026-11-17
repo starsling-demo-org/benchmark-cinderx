@@ -1,0 +1,64 @@
+{
+  "owner": "full-1",
+  "expectedRefs": {
+    "refs/heads/showcase": "2d1dba07c189228580753fee61741c4c11327a03",
+    "refs/heads/main": null
+  },
+  "workflowStates": {
+    ".github/workflows/ci.yml": "absent",
+    ".github/workflows/docs.yml": "absent",
+    ".github/workflows/publish.yml": "absent"
+  },
+  "dispatches": {
+    "full-1:full-1-main-push-cold-rep1-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "eabc3d003d9bfb3d23472493b1850b6bf42019bc",
+      "dispatchedAt": "2026-11-16T16:16:47.698Z"
+    },
+    "full-1:full-1-main-push-cold-rep1-github-baseline:main-push:github-baseline": {
+      "headSha": "b20f0b9776b452d8669675d856e52e013272834d",
+      "dispatchedAt": "2026-11-16T17:33:51.987Z"
+    },
+    "full-1:full-1-main-push-cold-rep1-starsling-patched:main-push:starsling-patched": {
+      "headSha": "4dd472423440c1d265a50caa3f205d7dc147342e",
+      "dispatchedAt": "2026-11-16T18:55:22.246Z"
+    },
+    "full-1:full-1-main-push-cold-rep2-starsling-patched:main-push:starsling-patched": {
+      "headSha": "4dd472423440c1d265a50caa3f205d7dc147342e",
+      "dispatchedAt": "2026-11-16T19:14:41.062Z"
+    },
+    "full-1:full-1-main-push-cold-rep2-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "eabc3d003d9bfb3d23472493b1850b6bf42019bc",
+      "dispatchedAt": "2026-11-16T19:35:20.031Z"
+    },
+    "full-1:full-1-main-push-cold-rep2-github-baseline:main-push:github-baseline": {
+      "headSha": "b20f0b9776b452d8669675d856e52e013272834d",
+      "dispatchedAt": "2026-11-16T20:47:22.379Z"
+    },
+    "full-1:full-1-main-push-cold-rep3-starsling-patched:main-push:starsling-patched": {
+      "headSha": "4dd472423440c1d265a50caa3f205d7dc147342e",
+      "dispatchedAt": "2026-11-16T22:05:53.988Z"
+    },
+    "full-1:full-1-main-push-cold-rep3-github-baseline:main-push:github-baseline": {
+      "headSha": "b20f0b9776b452d8669675d856e52e013272834d",
+      "dispatchedAt": "2026-11-16T22:26:07.864Z"
+    },
+    "full-1:full-1-main-push-cold-rep3-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "eabc3d003d9bfb3d23472493b1850b6bf42019bc",
+      "dispatchedAt": "2026-11-16T23:55:27.512Z"
+    }
+  },
+  "leaseSha": "b8d040701608b1071e18a8d99e092d64c4174513",
+  "initialRefs": {
+    "refs/heads/bench/control": "0c14a0b280d49ed0f6ccafd85d322d052ec0a8fe",
+    "refs/heads/showcase": "2d1dba07c189228580753fee61741c4c11327a03",
+    "refs/heads/starsling/develop": "0790c0e81c3da2a15e667e8ecc1d32a510550862"
+  },
+  "recovery": {
+    "phase": "completed",
+    "restoredRefs": {
+      "refs/heads/showcase": "2d1dba07c189228580753fee61741c4c11327a03",
+      "refs/heads/main": null
+    },
+    "disabledWorkflows": []
+  }
+}

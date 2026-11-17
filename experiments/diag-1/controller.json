@@ -1,0 +1,42 @@
+{
+  "owner": "diag-1",
+  "expectedRefs": {
+    "refs/heads/showcase": "2d1dba07c189228580753fee61741c4c11327a03",
+    "refs/heads/main": null
+  },
+  "workflowStates": {
+    ".github/workflows/ci.yml": "absent",
+    ".github/workflows/docs.yml": "absent",
+    ".github/workflows/publish.yml": "absent"
+  },
+  "dispatches": {
+    "diag-1:diag-1-main-push-cold-rep1-github-baseline:main-push:github-baseline": {
+      "headSha": "b20f0b9776b452d8669675d856e52e013272834d",
+      "dispatchedAt": "2026-11-16T06:05:22.415Z"
+    },
+    "diag-1:diag-1-main-push-cold-rep1-starsling-baseline:main-push:starsling-baseline": {
+      "headSha": "eabc3d003d9bfb3d23472493b1850b6bf42019bc",
+      "dispatchedAt": "2026-11-16T07:34:13.055Z"
+    },
+    "diag-1:diag-1-main-push-cold-rep1-starsling-baseline-retry1:main-push:starsling-baseline": {
+      "headSha": "eabc3d003d9bfb3d23472493b1850b6bf42019bc",
+      "dispatchedAt": "2026-11-16T08:49:34.278Z"
+    }
+  },
+  "leaseSha": "e82877ad924d4940c719510f5df3f62f559fccdd",
+  "initialRefs": {
+    "refs/heads/bench/control": "dbb561df355578e923d105d31bb8a20018438818",
+    "refs/heads/showcase": "2d1dba07c189228580753fee61741c4c11327a03",
+    "refs/heads/starsling/develop": "0790c0e81c3da2a15e667e8ecc1d32a510550862"
+  },
+  "recovery": {
+    "phase": "completed",
+    "restoredRefs": {
+      "refs/heads/showcase": "2d1dba07c189228580753fee61741c4c11327a03",
+      "refs/heads/main": null
+    },
+    "disabledWorkflows": [
+      ".github/workflows/ci.yml"
+    ]
+  }
+}

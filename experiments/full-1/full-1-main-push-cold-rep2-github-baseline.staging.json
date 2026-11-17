@@ -1,0 +1,53 @@
+{
+  "experimentId": "full-1",
+  "sampleId": "full-1-main-push-cold-rep2-github-baseline",
+  "scenarioName": "main-push",
+  "variant": "github-baseline",
+  "profileName": "cold",
+  "currentStep": "completed",
+  "completedSteps": [
+    "1_acquire_lease",
+    "2_register_placeholders",
+    "3_disable_workflows_and_reset_refs",
+    "4_install_and_verify_trees",
+    "5_enable_scenario_workflows",
+    "6_trigger_event",
+    "7_await_downstream_completion"
+  ],
+  "controlBranch": "bench/control",
+  "defaultBranch": "showcase",
+  "benchmarkOwnedRefs": [
+    "refs/heads/main",
+    "refs/heads/showcase",
+    "refs/heads/bench/pr/main-push/head"
+  ],
+  "previousBenchmarkRefs": {
+    "refs/heads/main": "eabc3d003d9bfb3d23472493b1850b6bf42019bc",
+    "refs/heads/showcase": "d565263a86bc5308445c52bdcda4deed24830bc6",
+    "refs/heads/bench/pr/main-push/head": null
+  },
+  "observedUnrelatedRefs": {
+    "refs/heads/bench/control": "0c14a0b280d49ed0f6ccafd85d322d052ec0a8fe",
+    "refs/heads/starsling/develop": "0790c0e81c3da2a15e667e8ecc1d32a510550862"
+  },
+  "registeredPlaceholderWorkflows": [],
+  "disabledWorkflows": [
+    ".github/workflows/ci.yml",
+    ".github/workflows/docs.yml",
+    ".github/workflows/publish.yml"
+  ],
+  "enabledWorkflows": [
+    ".github/workflows/ci.yml"
+  ],
+  "updatedAt": "2026-11-16T22:01:41.743Z",
+  "leaseAcquiredAt": "2026-11-16T20:43:45.080Z",
+  "leaseHolder": "full-1:full-1-main-push-cold-rep2-github-baseline",
+  "installedTreeHash": "fe498e1b2411260ef1c7b097d89d92ca5a486c2d0d953ad416d306ccff39c997",
+  "dispatchRecord": {
+    "idempotencyKey": "full-1:full-1-main-push-cold-rep2-github-baseline:main-push:github-baseline",
+    "dispatchedAt": "2026-11-16T20:47:22.379Z",
+    "event": "push",
+    "targetRef": "refs/heads/main",
+    "headSha": "b20f0b9776b452d8669675d856e52e013272834d"
+  }
+}

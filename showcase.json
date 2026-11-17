@@ -1,0 +1,22 @@
+{
+  "experiment": "full-2",
+  "title": "cinderx",
+  "stars": "308",
+  "same": "",
+  "notes": [
+    "Samples ran concurrently, each in its own cache scope (one repository per lane: benchmark-cinderx-lane1, benchmark-cinderx-lane2, with the same branches, events and payloads as benchmark-cinderx); a cold sample ran with no caches in its repository. 6 samples came from an earlier sequential run of the same configuration."
+  ],
+  "agentPullRequests": [],
+  "layout": "showcase",
+  "agentPrs": [
+    {
+      "url": "https://github.com/starsling-demo-org/benchmark-cinderx/pull/1",
+      "summary": "split build wheels per wheel",
+      "experiment": {
+        "id": "full-2",
+        "before": "starsling-baseline",
+        "after": "starsling-patched"
+      }
+    }
+  ]
+}

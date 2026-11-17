@@ -1,0 +1,12 @@
+{
+  "sampleId": "full-1-main-push-cold-rep2-starsling-baseline",
+  "scenarioName": "main-push",
+  "profileName": "cold",
+  "variant": "starsling-baseline",
+  "repetition": 2,
+  "event": "push",
+  "dispatchedAt": "2026-11-16T19:35:20.031Z",
+  "headSha": "eabc3d003d9bfb3d23472493b1850b6bf42019bc",
+  "targetBranch": "main",
+  "defaultBranch": "showcase"
+}
